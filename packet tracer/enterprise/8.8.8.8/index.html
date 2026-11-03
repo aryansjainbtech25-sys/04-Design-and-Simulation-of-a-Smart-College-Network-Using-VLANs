@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Global Internet - Simulated Backbone</title>
+<style>
+body{margin:0;font-family:Segoe UI,Arial;background:#0a0e1a;color:#ffffff}
+header{background:linear-gradient(135deg,#00f5ff,#7b2ff7,#ff006a);padding:50px 20px;text-align:center;color:white}
+header h1{font-size:48px;margin:0;letter-spacing:2px;text-shadow:0 0 20px rgba(255,255,255,0.5)}
+header p{font-size:19px;opacity:0.95;margin-top:12px;color:white}
+.container{max-width:1000px;margin:40px auto;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:#141b2d;border:1px solid #1f2a44;border-radius:16px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,0.4);color:#ffffff}
+.card h3{color:#00f5ff;margin:0 0 12px 0}
+.card p, .card div, .card span, .card li{color:#ffffff !important;line-height:1.6}
+.badge{background:#1f2a44;color:#7bff00 !important;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;margin-top:8px;border:1px solid #2a3a5a}
+.status{display:flex;justify-content:space-around;background:#0f1629;border:1px solid #1f2a44;border-radius:14px;padding:20px;margin-bottom:30px;text-align:center;color:#ffffff}
+.status b{color:#00f5ff}
+.footer{text-align:center;padding:30px;background:#070a14;margin-top:50px;color:#ffffff}
+a{color:#00f5ff;text-decoration:none;font-weight:600}
+a:hover{color:#ffffff;text-decoration:underline}
+</style>
+</head>
+<body>
+<header>
+<h1>🌐 WELCOME TO THE INTERNET</h1>
+<p>Simulated Global Backbone | ISP-Router 200.1.1.2 | Server 8.8.8.8</p>
+<p style="background:rgba(0,0,0,0.4);display:inline-block;padding:8px 18px;border-radius:25px;font-size:14px;margin-top:15px;color:white">You have successfully exited the Smart College Network and reached the public internet</p>
+</header>
+
+<div class="container">
+<div class="status">
+<div><b>ISP-Router</b><br>200.1.1.2/30<br><span style="color:#7bff00">● Up</span></div>
+<div><b>Edge-Router</b><br>200.1.1.1/30<br><span style="color:#7bff00">● Up</span></div>
+<div><b>DNS</b><br>8.8.8.8<br><span style="color:#7bff00">● Global</span></div>
+<div><b>Latency</b><br>15ms<br><span style="color:#7bff00">● Optimal</span></div>
+</div>
+
+<div class="grid">
+<div class="card"><h3>🚀 Your Request Path</h3><p>Student-PC1 192.168.10.101<br>→ SW-Student Gig0/1 Trunk<br>→ Core-MLS 192.168.10.1 SVI<br>→ Core Gig0/1 10.0.0.1 → Edge 10.0.0.2<br>→ Edge Gig0/0/1 200.1.1.1 → ISP 200.1.1.2<br>→ ISP Gig0/0/1 8.8.8.1 → This Server 8.8.8.8</p><span class="badge">7 Hops - Inter-VLAN + Inter-AS Routing</span></div>
+
+<div class="card"><h3>🏫 Smart College Network</h3><p>Source: 192.168.10.0/24 VLAN 10<br>Gateway: 192.168.10.1<br>ACL: STUDENT_RESTRICT<br>DHCP: 192.168.10.100 pool</p><p><a href="http://college.local">← Back to college.local</a><br><a href="http://smartcollege.local">← Back to smartcollege.local</a></p></div>
+
+<div class="card"><h3>🔒 Security Verified</h3><p>✅ DHCP Relay via Core<br>✅ WPA2-PSK Wireless<br>✅ DNS college.local → 99.20<br>✅ ACL Guest isolation<br>✅ Inter-VLAN Routing<br>✅ Now: Internet Reachability</p><span class="badge">Phase 9.1 Complete</span></div>
+</div>
+
+<h2 style="margin-top:40px;color:#00f5ff">Internet Connectivity Test Results</h2>
+<div class="card" style="border:1px solid #00f5ff">
+<p><b>Edge-Router ping 200.1.1.2:</b> 80% success (4/5) - ISP link up</p>
+<p><b>Edge-Router ping 8.8.8.8:</b> 80% success (4/5) - Server reachable</p>
+<p><b>Student-PC1 ping 8.8.8.8:</b> Reply 15ms TTL 125 - End-to-end from VLAN 10 to Internet works!</p>
+<p style="color:#7bff00 !important;font-weight:700">● All routes operational - Ready for NAT configuration in Task 9.2</p>
+</div>
+</div>
+
+<div class="footer">
+<p>Simulated Internet Server | 8.8.8.8/24 | ISP-Router 8.8.8.1 | Project: Smart College Network</p>
+<p>Phase 9.1 - ISP & Internet Server Setup</p>
+</div>
+</body>
+</html>
